@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\CheckAge;
+use App\Http\Middleware\EnsureSsoIsAuthenticated;
+use App\Http\Middleware\RedirectIfSsoAuthenticated;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -15,6 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'check.age' => CheckAge::class,
+            'sso.auth' => EnsureSsoIsAuthenticated::class,
+            'sso.guest' => RedirectIfSsoAuthenticated::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

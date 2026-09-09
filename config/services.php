@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'sso' => [
+        'url' => env('SSO_URL', 'http://127.0.0.1:8000'),
+        'device' => env('SSO_DEVICE', 'clase5-catalogo'),
+        'timeout' => (int) env('SSO_TIMEOUT', 5),
+    ],
+
 ];

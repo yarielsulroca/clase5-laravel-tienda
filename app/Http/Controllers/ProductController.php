@@ -10,13 +10,20 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ProductController extends Controller
 {
+    public function inicio(): View
+    {
+        return view('catalog.index', [
+            'productos' => Producto::query()->latest()->paginate(12),
+        ]);
+    }
+
     /**
      * Display a listing of the products.
      */
     public function index(): View
     {
         return view('products.index', [
-            'productos' => Producto::latest()->paginate(10),
+            'productos' => Producto::query()->latest()->paginate(10),
         ]);
     }
 

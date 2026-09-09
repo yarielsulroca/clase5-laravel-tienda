@@ -2,8 +2,52 @@
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --animate-fade-up: fade-up 0.7s ease-out both;
+    --animate-card-in: card-in 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(1.25rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.catalog-grid > * {
+    animation: card-in 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.catalog-grid > *:nth-child(1) { animation-delay: 0.04s; }
+.catalog-grid > *:nth-child(2) { animation-delay: 0.08s; }
+.catalog-grid > *:nth-child(3) { animation-delay: 0.12s; }
+.catalog-grid > *:nth-child(4) { animation-delay: 0.16s; }
+.catalog-grid > *:nth-child(5) { animation-delay: 0.2s; }
+.catalog-grid > *:nth-child(6) { animation-delay: 0.24s; }
+.catalog-grid > *:nth-child(7) { animation-delay: 0.28s; }
+.catalog-grid > *:nth-child(8) { animation-delay: 0.32s; }
+.catalog-grid > *:nth-child(9) { animation-delay: 0.36s; }
+.catalog-grid > *:nth-child(10) { animation-delay: 0.4s; }
+.catalog-grid > *:nth-child(11) { animation-delay: 0.44s; }
+.catalog-grid > *:nth-child(12) { animation-delay: 0.48s; }

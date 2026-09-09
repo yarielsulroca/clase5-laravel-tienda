@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen">
+    <x-storefront-nav />
     <div class="max-w-5xl mx-auto py-10 px-4">
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-3xl font-bold text-gray-800">Listado de productos</h1>
